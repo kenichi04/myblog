@@ -23,4 +23,13 @@ class PostsController extends Controller
         // 上の書き方と同じ
         // return view('post.index')->with('posts', $posts);
     }
+
+    // public function show($id) {
+    public function show(Post $post) {
+        // $post = Post::find($id);
+        // データが見つからなかった場合に例外を返す
+        //  $post = Post::findOrFail($id);
+
+         return view('posts.show')->with('post', $post);
+    }
 }
