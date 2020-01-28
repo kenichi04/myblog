@@ -21,3 +21,5 @@ Route::get('/posts/{post}', 'PostsController@show')->where('post', '[0-9]+');
 // 上のrouteの{post}の値を数字限定にすることで、下のcreateが入らないようにする
 Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts', 'PostsController@store');
+Route::get('/posts/{post}/edit', 'PostsController@edit');
+Route::patch('/posts/{post}', 'PostsController@update');
